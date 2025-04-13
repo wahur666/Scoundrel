@@ -91,7 +91,7 @@ public partial class Level : Control {
 		var activeCards = Board.ActiveBoard.Count(x => x.Suit != CardSuit.None);
 		_runButton.Disabled = !Board.RunAvailable || activeCards != 4;
 		_dealButton.Disabled =  activeCards != 1;
-		if (activeCards == 1) {
+		if (activeCards == 1 && Board.GetRemainingCards() > 0) {
 			PrepareNewDeal();
 		}
 		_currentHealthLabel.Text = CurrentHealth.ToString();
