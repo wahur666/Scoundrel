@@ -65,6 +65,7 @@ public class Board {
 	public CardStruct Weapon = Blank();
 	public CardStruct LastSlain = Blank();
 	private bool _runnned = false;
+	private bool _healed = false;
 
 	public Board() {
 		_currentDeck = FullDeck.Shuffle2().ToList();
@@ -95,6 +96,11 @@ public class Board {
 
 		ActiveBoard[index] = Blank();
 		_discardDeck.Add(card);
+		if (_healed) {
+			return 0;
+		}
+
+		_healed = true;
 		return card.Value;
 	}
 	
@@ -159,5 +165,6 @@ public class Board {
 
 	public void PrepareNewDeal() {
 		_runnned = false;
+		_healed = false;
 	}
 }
