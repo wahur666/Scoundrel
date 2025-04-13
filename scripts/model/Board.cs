@@ -36,7 +36,7 @@ public class Board {
 		new() { AssetPath = "res://assets/Cards/card_spades_10.png", Suit = CardSuit.Spade, Value = 10 },
 		new() { AssetPath = "res://assets/Cards/card_spades_J.png", Suit = CardSuit.Spade, Value = 11 },
 		new() { AssetPath = "res://assets/Cards/card_spades_Q.png", Suit = CardSuit.Spade, Value = 12 },
-		new() { AssetPath = "res://assets/Cards/card_spades_Q.png", Suit = CardSuit.Spade, Value = 13 },
+		new() { AssetPath = "res://assets/Cards/card_spades_K.png", Suit = CardSuit.Spade, Value = 13 },
 		new() { AssetPath = "res://assets/Cards/card_spades_A.png", Suit = CardSuit.Spade, Value = 14 },
 		new() { AssetPath = "res://assets/Cards/card_clubs_02.png", Suit = CardSuit.Club, Value = 2 },
 		new() { AssetPath = "res://assets/Cards/card_clubs_03.png", Suit = CardSuit.Club, Value = 3 },
@@ -49,7 +49,7 @@ public class Board {
 		new() { AssetPath = "res://assets/Cards/card_clubs_10.png", Suit = CardSuit.Club, Value = 10 },
 		new() { AssetPath = "res://assets/Cards/card_clubs_J.png", Suit = CardSuit.Club, Value = 11 },
 		new() { AssetPath = "res://assets/Cards/card_clubs_Q.png", Suit = CardSuit.Club, Value = 12 },
-		new() { AssetPath = "res://assets/Cards/card_clubs_Q.png", Suit = CardSuit.Club, Value = 13 },
+		new() { AssetPath = "res://assets/Cards/card_clubs_K.png", Suit = CardSuit.Club, Value = 13 },
 		new() { AssetPath = "res://assets/Cards/card_clubs_A.png", Suit = CardSuit.Club, Value = 14 }
 	];
 
