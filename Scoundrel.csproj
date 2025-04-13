@@ -6,4 +6,7 @@
   <ItemGroup>
     <Folder Include="scripts\model\" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scoundrel.pdf" />
+  </ItemGroup>
 </Project>
