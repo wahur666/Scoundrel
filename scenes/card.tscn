@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dj6kucbpsbvly"]
+
+[ext_resource type="Texture2D" uid="uid://5srdsvbfhaav" path="res://assets/Cards/card_back.png" id="1_kikvd"]
+[ext_resource type="Script" uid="uid://cvtmv0mvxig27" path="res://scripts/entity/Card.cs" id="2_rjlel"]
+
+[node name="TextureRect" type="TextureRect"]
+texture_filter = 1
+custom_minimum_size = Vector2(192, 192)
+texture = ExtResource("1_kikvd")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("2_rjlel")

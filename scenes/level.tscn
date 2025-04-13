@@ -1,0 +1,253 @@
+[gd_scene load_steps=14 format=3 uid="uid://uhbkt12jh812"]
+
+[ext_resource type="Script" uid="uid://b1atmgr1kl3ov" path="res://scripts/Level.cs" id="1_oi3di"]
+[ext_resource type="PackedScene" uid="uid://dhgtkmcl0d641" path="res://scenes/active_card.tscn" id="1_u52ul"]
+[ext_resource type="Texture2D" uid="uid://5srdsvbfhaav" path="res://assets/Cards/card_back.png" id="2_vonw3"]
+[ext_resource type="PackedScene" uid="uid://dj6kucbpsbvly" path="res://scenes/card.tscn" id="3_f2txt"]
+[ext_resource type="Texture2D" uid="uid://v4fm8xjwriv2" path="res://assets/other_suit_hearts.png" id="4_0b4ue"]
+
+[sub_resource type="SystemFont" id="SystemFont_0b4ue"]
+
+[sub_resource type="SystemFont" id="SystemFont_oi3di"]
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_0b4ue"]
+font = SubResource("SystemFont_oi3di")
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_vonw3"]
+
+[sub_resource type="SystemFont" id="SystemFont_f2txt"]
+
+[sub_resource type="SystemFont" id="SystemFont_1ainy"]
+
+[sub_resource type="SystemFont" id="SystemFont_n6hdu"]
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_km5ld"]
+font = SubResource("SystemFont_n6hdu")
+font_size = 48
+
+[node name="Level" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oi3di")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -194.0
+offset_top = -362.0
+offset_right = 194.0
+offset_bottom = 362.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 2
+
+[node name="ActiveCard" parent="GridContainer" instance=ExtResource("1_u52ul")]
+layout_mode = 2
+
+[node name="ActiveCard2" parent="GridContainer" instance=ExtResource("1_u52ul")]
+layout_mode = 2
+
+[node name="ActiveCard3" parent="GridContainer" instance=ExtResource("1_u52ul")]
+layout_mode = 2
+
+[node name="ActiveCard4" parent="GridContainer" instance=ExtResource("1_u52ul")]
+layout_mode = 2
+
+[node name="Weapon" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="WeaponCard" parent="Weapon" instance=ExtResource("3_f2txt")]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 1025.0
+offset_right = 212.0
+offset_bottom = 1217.0
+
+[node name="WeaponMonster" parent="Weapon" instance=ExtResource("3_f2txt")]
+layout_mode = 0
+offset_left = 155.0
+offset_top = 1025.0
+offset_right = 347.0
+offset_bottom = 1217.0
+
+[node name="DeckPile" type="TextureRect" parent="."]
+texture_filter = 1
+custom_minimum_size = Vector2(192, 192)
+layout_mode = 2
+offset_left = 14.0
+offset_top = 49.0
+offset_right = 206.0
+offset_bottom = 241.0
+grow_vertical = 0
+texture = ExtResource("2_vonw3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DeckPile"]
+layout_mode = 0
+offset_left = 172.0
+offset_top = 9.0
+offset_right = 377.0
+offset_bottom = 183.0
+theme_override_constants/separation = 24
+
+[node name="RunButton" type="Button" parent="DeckPile/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_0b4ue")
+theme_override_font_sizes/font_size = 48
+text = "Run"
+
+[node name="DealButton" type="Button" parent="DeckPile/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_0b4ue")
+theme_override_font_sizes/font_size = 48
+text = "Deal"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="DeckPile"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -36.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="DeckPile/VBoxContainer2"]
+layout_mode = 2
+text = "Deck"
+label_settings = SubResource("LabelSettings_0b4ue")
+horizontal_alignment = 1
+
+[node name="RemainingDeckLabel" type="Label" parent="DeckPile/VBoxContainer2"]
+layout_mode = 2
+text = "52"
+label_settings = SubResource("LabelSettings_0b4ue")
+horizontal_alignment = 1
+
+[node name="DiscardPile" type="TextureRect" parent="."]
+texture_filter = 1
+custom_minimum_size = Vector2(192, 192)
+layout_mode = 2
+offset_left = 505.0
+offset_top = 1025.0
+offset_right = 697.0
+offset_bottom = 1217.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_vonw3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DiscardPile"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -36.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DiscardText" type="Label" parent="DiscardPile/VBoxContainer"]
+layout_mode = 2
+text = "Discard"
+label_settings = SubResource("LabelSettings_0b4ue")
+horizontal_alignment = 1
+
+[node name="DiscardLabel" type="Label" parent="DiscardPile/VBoxContainer"]
+layout_mode = 2
+text = "52"
+label_settings = SubResource("LabelSettings_0b4ue")
+horizontal_alignment = 1
+
+[node name="MenuButton" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -141.0
+offset_bottom = 75.0
+grow_horizontal = 0
+theme_override_fonts/font = SubResource("SystemFont_vonw3")
+theme_override_font_sizes/font_size = 48
+text = "Menu"
+
+[node name="NewGameButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -153.0
+offset_top = 115.0
+offset_right = 1.0
+offset_bottom = 257.0
+grow_horizontal = 0
+theme_override_fonts/font = SubResource("SystemFont_vonw3")
+theme_override_font_sizes/font_size = 48
+text = "New 
+Game"
+
+[node name="VersionLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 578.0
+offset_top = 73.0
+offset_right = 720.0
+offset_bottom = 115.0
+theme_override_fonts/font = SubResource("SystemFont_f2txt")
+theme_override_font_sizes/font_size = 30
+text = "v0.0.0"
+horizontal_alignment = 1
+
+[node name="GameStatusLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 193.0
+offset_top = 2.0
+offset_right = 503.0
+offset_bottom = 56.0
+theme_override_fonts/font = SubResource("SystemFont_1ainy")
+theme_override_font_sizes/font_size = 32
+text = "You won"
+horizontal_alignment = 1
+
+[node name="Heart" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 336.0
+offset_top = -6.0
+offset_right = 636.0
+offset_bottom = 294.0
+mouse_filter = 2
+texture = ExtResource("4_0b4ue")
+stretch_mode = 5
+
+[node name="HeartLabel" type="Label" parent="Heart"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -27.0
+offset_right = 28.0
+offset_bottom = 272.0
+grow_horizontal = 2
+text = "20"
+label_settings = SubResource("LabelSettings_km5ld")
+horizontal_alignment = 1
+vertical_alignment = 1
